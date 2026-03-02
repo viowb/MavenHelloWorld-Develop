@@ -105,9 +105,9 @@
         </plugin>
 
         <plugin>
-          <groupId>org.mortbay.jetty</groupId>
+          <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
-          <version>8.0.0.M1</version>
+          <version>11.0.19</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -116,42 +116,35 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>servlet-api</artifactId>
-        <version>2.5</version>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>6.0.0</version>
       </dependency>
 
       <dependency>
-        <groupId>javax.servlet.jsp</groupId>
-        <artifactId>jsp-api</artifactId>
-        <version>2.2</version>
+        <groupId>jakarta.servlet.jsp</groupId>
+        <artifactId>jakarta.jsp-api</artifactId>
+        <version>3.1.1</version>
       </dependency>
 
       <dependency>
         <groupId>junit</groupId>
-        <artifactId>junit-dep</artifactId>
-        <version>4.10</version>
+        <artifactId>junit</artifactId>
+        <version>4.13.2</version>
         <scope>test</scope>
       </dependency>
 
       <dependency>
         <groupId>org.hamcrest</groupId>
-        <artifactId>hamcrest-core</artifactId>
-        <version>1.2.1</version>
-        <scope>test</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.hamcrest</groupId>
-        <artifactId>hamcrest-library</artifactId>
-        <version>1.2.1</version>
+        <artifactId>hamcrest</artifactId>
+        <version>2.2</version>
         <scope>test</scope>
       </dependency>
 
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
-        <version>1.8.5</version>
+        <version>5.7.1</version>
         <scope>test</scope>
       </dependency>
     </dependencies>

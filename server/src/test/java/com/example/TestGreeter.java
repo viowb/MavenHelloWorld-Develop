@@ -30,4 +30,54 @@ public class TestGreeter {
 
     assertThat(greeter.greet(someone).length(), is(greaterThan(someone.length())));
   }
+
+  @Test
+  public void greetShouldHandleEmptyString() {
+    String someone = "";
+    String result = greeter.greet(someone);
+
+    assertThat(result, containsString("Hello How are you"));
+  }
+
+  @Test
+  public void greetShouldHandleSpecialCharacters() {
+    String someone = "Alice@123!";
+    String result = greeter.greet(someone);
+
+    assertThat(result, containsString(someone));
+    assertThat(result, containsString("Hello How are you"));
+  }
+
+  @Test
+  public void greetShouldHandleLongNames() {
+    String someone = "VeryLongNameWithManyCharactersHere";
+    String result = greeter.greet(someone);
+
+    assertThat(result, containsString(someone));
+  }
+
+  @Test
+  public void greetShouldHandleMultipleWordNames() {
+    String someone = "John Doe Smith";
+    String result = greeter.greet(someone);
+
+    assertThat(result, containsString(someone));
+    assertThat(result, containsString("Hello How are you"));
+  }
+
+  @Test
+  public void greetShouldEndWithExclamationMark() {
+    String someone = "Alice";
+    String result = greeter.greet(someone);
+
+    assertThat(result, is("Hello How are you, Alice!"));
+  }
+
+  @Test
+  public void greetShouldReturnNonNullString() {
+    String someone = "Bob";
+    String result = greeter.greet(someone);
+
+    assertThat(result, org.hamcrest.Matchers.notNullValue());
+  }
 }
